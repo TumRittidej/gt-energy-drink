@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "73c104c8-c63f-4db3-809f-7e5eec1714c7",
+		"name": "Clinic management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"warawat.work@gmail.com\",\n    \"password\": \"poomwarawat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"poomwarawat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/reset/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEyLCJpYXQiOjE2NDg0Nzg4MzAsImV4cCI6MTY0ODU2NTIzMH0.mqnDloqqI_NyQVS6buJWZ1az5m18s8nzYfflD4Ahlv0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"reset",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEyLCJpYXQiOjE2NDg0Nzg4MzAsImV4cCI6MTY0ODU2NTIzMH0.mqnDloqqI_NyQVS6buJWZ1az5m18s8nzYfflD4Ahlv0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"warawat555@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/forgot",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Find paginate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNjQ4Mzc0NDgwLCJleHAiOjE2NDg0NjA4ODB9.x4zPgYKrDXRehVat4uIxqNW4GdQiDxGNKiGIG7XUdPI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user?page=1&limit=50",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNjQ4Mzg2NzQ0LCJleHAiOjE2NDg0NzMxNDR9._KspYg50eKSIS6b14AS7oqpDy2HHvsAkMgN0t3vo21c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2NDg0Nzg4MDksImV4cCI6MTY0ODU2NTIwOX0.YX0W9zAJTfafAa_oB-Ql51EZctEIxUqkABBZ2oBM6To",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"warawat\",\n    \"lastName\": \"lailerd\",\n    \"email\": \"warawat.work@gmail.com\",\n    \"phone\": \"0918792726\",\n    \"citizenID\": \"1149900567827\",\n    \"isActive\": true,\n    \"userType\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNjQ4Mzg2NzQ0LCJleHAiOjE2NDg0NzMxNDR9._KspYg50eKSIS6b14AS7oqpDy2HHvsAkMgN0t3vo21c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"warawat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clinic",
+			"item": [
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEyLCJ1c2VyVHlwZSI6IkFETUlOIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2NDk2MDIwNjAsImV4cCI6MTY0OTY4ODQ2MH0.JgyyHvkcEkvX5KBmoawZfaVcPslfDH996aAF3tMAhCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clinic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGluaWNJRCI6MiwidXNlclR5cGUiOiJDTElOSUMiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ4NDczODkzLCJleHAiOjE2NDg1NjAyOTN9.aB_cTpDV-3268oT_32d5-sxwKErECsgDxYv_bFvoqtE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clinic/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinic",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNjQ4Mzg2NzQ0LCJleHAiOjE2NDg0NzMxNDR9._KspYg50eKSIS6b14AS7oqpDy2HHvsAkMgN0t3vo21c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"เสริมความงาน R&B\",\n    \"licenseNo\": \"0105043256784\",\n    \"openTime\": \"09.00\",\n    \"closeTime\": \"17.00\",\n    \"email\": \"warawat555@gmail.com\",\n    \"phone\": \"0123456789\",\n    \"province\": \"กรุงเทพมหานคร\",\n    \"district\": \"วังทองหลาง\",\n    \"subdistrict\": \"วังทองหลาง\",\n    \"postalCode\": \"10140\",\n    \"contactName\": \"ศิวกร จินดาจามร\",\n    \"contactPhone\": \"0123456789\",\n    \"contactEmail\": \"bomsiwakorns@gmail.com\",\n    \"isActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNjQ4Mzg2NzQ0LCJleHAiOjE2NDg0NzMxNDR9._KspYg50eKSIS6b14AS7oqpDy2HHvsAkMgN0t3vo21c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"เสริมความงาน R&B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinic/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinic",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clinic member",
+			"item": [
+				{
+					"name": "Find paginate clinic member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjUsInVzZXJUeXBlIjoiU1VQRVJBRE1JTiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjQ5NjA3Nzk0LCJleHAiOjE2NDk2OTQxOTR9.eCBNWnJm3Kec3IH6rFlqpGUzE85NnZZOU7O0cVBDk_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clinics/member",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEyLCJ1c2VyVHlwZSI6IkFETUlOIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2NDk2MDIwNjAsImV4cCI6MTY0OTY4ODQ2MH0.JgyyHvkcEkvX5KBmoawZfaVcPslfDH996aAF3tMAhCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"email\": \"warawat555@gmail.com\",\n    \"phone\": \"0918792726\",\n    \"citizenID\": \"1234567890124\",\n    \"isActive\": true,\n    \"userType\": \"SUPERADMIN\",\n    \"clinic\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinics/member",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinics/member/reset/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwiaWF0IjoxNjQ5NjA4MDAxLCJleHAiOjE2NDk2OTQ0MDF9.f42P58jmFsrBPQERPLIXpZQ4b70uvYHnIhKzkB5Ghm8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member",
+								"reset",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwiaWF0IjoxNjQ5NjA4MDAxLCJleHAiOjE2NDk2OTQ0MDF9.f42P58jmFsrBPQERPLIXpZQ4b70uvYHnIhKzkB5Ghm8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"warawat555@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinics/member/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"warawat555@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinics/member/forgot",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjUsInVzZXJUeXBlIjoiU1VQRVJBRE1JTiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjQ5NjA3Nzk0LCJleHAiOjE2NDk2OTQxOTR9.eCBNWnJm3Kec3IH6rFlqpGUzE85NnZZOU7O0cVBDk_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/clinics/member/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjA5ODI1LCJleHAiOjE2NDk2OTYyMjV9.96XfPX9pJY-5Zy0xHBYYwo3SI_zylGwq4wGfW2wOTZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"warawat\",\n    \"lastName\": \"lailerd\",\n    \"clinic\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/clinics/member/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"clinics",
+								"member",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwibWVtYmVyIjp7ImlkIjo1LCJmaXJzdE5hbWUiOiJ3YXJhd2F0IiwibGFzdE5hbWUiOiJsYWlsZXJkIiwiZW1haWwiOiJ3YXJhd2F0NTU1QGdtYWlsLmNvbSIsInBob25lIjoiMDkxODc5MjcyNiIsImJpcnRoRGF0ZSI6bnVsbCwiY2l0aXplbklEIjoiMTIzNDU2Nzg5MDEyNCIsInByb3ZpbmNlIjpudWxsLCJkaXN0cmljdCI6bnVsbCwic3ViZGlzdHJpY3QiOm51bGwsInBvc3RhbENvZGUiOm51bGwsImltYWdlcyI6W10sInNpZ25hdHVyZUltYWdlIjp7fSwiaXNBY3RpdmUiOnRydWUsInVzZXJUeXBlIjoiTUVNQkVSIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xMFQwOTowNDoyOC4yNDRaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xMFQxMDowMDo1OS45NzFaIiwiZGVsZXRlZEF0IjpudWxsLCJjbGluaWMiOnsiaWQiOjIsIm5hbWUiOiLguYDguKrguKPguLTguKHguITguKfguLLguKHguIfguLLguJkgUiZCIiwibGljZW5zZU5vIjoiMDEwNTA0MzI1Njc4NCIsIm9wZW5UaW1lIjoiMDkuMDAiLCJjbG9zZVRpbWUiOiIxNy4wMCIsImVtYWlsIjoid2FyYXdhdDU1NUBnbWFpbC5jb20iLCJwaG9uZSI6IjAxMjM0NTY3ODkiLCJwcm92aW5jZSI6IuC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyIsImRpc3RyaWN0Ijoi4Lin4Lix4LiH4LiX4Lit4LiH4Lir4Lil4Liy4LiHIiwic3ViZGlzdHJpY3QiOiLguKfguLHguIfguJfguK3guIfguKvguKXguLLguIciLCJwb3N0YWxDb2RlIjoiMTAxNDAiLCJjb250YWN0TmFtZSI6IuC4qOC4tOC4p-C4geC4oyDguIjguLTguJnguJTguLLguIjguLLguKHguKMiLCJjb250YWN0UGhvbmUiOiIwMTIzNDU2Nzg5IiwiY29udGFjdEVtYWlsIjoiYm9tc2l3YWtvcm5zQGdtYWlsLmNvbSIsImltYWdlcyI6W10sImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTI3VDA3OjU2OjQxLjAwN1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA2VDAxOjEzOjI0LjY1NVoiLCJkZWxldGVkQXQiOm51bGx9fSwiaWF0IjoxNjQ5Njc5MTI2LCJleHAiOjE2NDk3NjU1MjZ9.2kpJTpoLdn8xKZkLUuF3vcXx8AE3zosn1-RMLn75nio",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjIxMjM0LCJleHAiOjE2NDk3MDc2MzR9.KCKq4Af5h9HPahKmBK1jqeHtSO28AZeCr5gL9na64cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/post/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjIxMjM0LCJleHAiOjE2NDk3MDc2MzR9.KCKq4Af5h9HPahKmBK1jqeHtSO28AZeCr5gL9na64cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test post\",\n    \"description\": \"hot promotion\",\n    \"clinicPrice\": 2500.00,\n    \"startDate\": \"2022-04-10T20:00:00.231Z\",\n    \"endDate\": \"2022-04-10T23:59:59.231Z\",\n    \"clinic\": 2,\n    \"isApproved\": false,\n    \"isActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjIxMjM0LCJleHAiOjE2NDk3MDc2MzR9.KCKq4Af5h9HPahKmBK1jqeHtSO28AZeCr5gL9na64cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjIxMjM0LCJleHAiOjE2NDk3MDc2MzR9.KCKq4Af5h9HPahKmBK1jqeHtSO28AZeCr5gL9na64cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"warawat\",\n    \"lastName\": \"lailerd\",\n    \"phone\": \"0918792726\",\n    \"isActive\": true,\n    \"clinic\": 2,\n    \"channelType\": \"FACEBOOK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/patient",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJRCI6NSwidXNlclR5cGUiOiJNRU1CRVIiLCJyb2xlIjoiQ0xJTklDIiwiaWF0IjoxNjQ5NjIxMjM0LCJleHAiOjE2NDk3MDc2MzR9.KCKq4Af5h9HPahKmBK1jqeHtSO28AZeCr5gL9na64cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/patient",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "upload",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "path",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/poomwarawat/Downloads/0D45D32E-14B6-423E-AAB1-79DEBA1118F0.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

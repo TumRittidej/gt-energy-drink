@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.energy-drink-bg {
+  height: 100vh;
+  background-image: url('../img/bg.png');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+.energy-drink-bg:hover {
+  background-image: url('../img/bg-hover.png');
+}
+
+.logo {
+  width: 100%;
+}
+.logo img {
+  width: 220px;
+}
+
+.content-wrapper {
+  display: flex;
+  transition: 0.2s;
+}
+
+.heading-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: -80px;
+  margin-left: -50px;
+}
+
+.heading-wrapper img {
+  width: 580px;
+}
+
+.heading-wrapper .heading-1 {
+  transition: 0.2s;
+}
+
+.heading-wrapper .heading-2 {
+  margin-top: 80px;
+  margin-left: -270px;
+  transition: 0.2s;
+}
+
+.heading-wrapper .heading-3 {
+  margin-top: 150px;
+  margin-left: -370px;
+  transition: 0.2s;
+}
+
+.heading-wrapper:hover .heading-1 {
+  transform: scale(1.1) translateX(30px);
+}
+
+.heading-wrapper:hover .heading-2 {
+  transform: scale(1.1);
+}
+.heading-wrapper:hover .heading-3 {
+  transform: scale(1.1) translateX(20px);
+}
+
+.bottle-wrapper {
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 100%;
+  z-index: 3;
+}
+.bottle-wrapper img {
+  width: 450px;
+  transition: 0.2s;
+}
+
+.bottle-wrapper img:hover {
+  filter: drop-shadow(0 0 5px rgba(200, 218, 45, 0.5));
+  transform: translateY(-8px);
+}
+.social-wrapper {
+  margin-top: -150px;
+}
+
+.social-rows {
+  display: inline-flex;
+}
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+ul li img {
+  height: 25px;
+  width: 25px;
+  margin-right: 1.3rem;
+  transition: 0.3s;
+  z-index: 10;
+  transition: 0.2s;
+}
+
+ul li {
+  font-weight: 300;
+  padding-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 25px;
+  color: #b5e124;
+  z-index: 10;
+  transition: 0.2s;
+}
+
+ul li a:hover img {
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 5px rgba(241, 88, 34, 0.5));
+}
+ul li a:hover {
+  filter: drop-shadow(0 0 5px rgba(181, 225, 36, 0.7));
+}
+
+ul li a:hover,
+ul li:hover {
+  transition: 0.2s;
+  color: #b5e124;
+}
+
+@media screen and (max-width: 1399px) {
+  .bottle-wrapper img {
+    width: 100%;
+  }
+  .heading-wrapper img {
+    width: 540px;
+  }
+  .social-wrapper {
+    margin-top: -85px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .logo img {
+    width: 200px;
+  }
+  .heading-wrapper img {
+    width: 480px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .heading-wrapper img {
+    width: 400px;
+  }
+  .heading-wrapper .heading-3 {
+    margin-left: -290px;
+  }
+  .social-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    text-align: center;
+  }
+  .logo img {
+    width: 125px;
+  }
+  .content-wrapper {
+    padding-top: 1rem;
+  }
+  .heading-wrapper {
+    margin-left: 0;
+    margin-top: 0;
+    z-index: 5;
+    margin-top: 130px;
+  }
+  .heading-wrapper img {
+    width: 315px;
+  }
+  .heading-wrapper .heading-2 {
+    margin-left: -280px;
+    margin-top: 70px;
+  }
+  .heading-wrapper .heading-3 {
+    margin-left: -240px;
+    margin-top: 110px;
+  }
+  .heading-wrapper:hover .heading-1 {
+    transform: scale(1.1);
+  }
+  .heading-wrapper:hover .heading-3 {
+    transform: scale(1.1);
+  }
+
+  .bottle-wrapper {
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .bottle-wrapper img {
+    width: 80%;
+  }
+  .social-wrapper {
+    padding-top: 0.5rem;
+    padding-left: 2rem;
+  }
+  ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+  }
+  ul li a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottle-wrapper img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .content-wrapper {
+    padding-top: 2rem;
+  }
+  .heading-wrapper img {
+    width: 250px;
+  }
+  .heading-wrapper .heading-2 {
+    margin-left: -215px;
+    margin-top: 55px;
+  }
+  .heading-wrapper .heading-3 {
+    margin-left: -180px;
+    margin-top: 80px;
+  }
+}
